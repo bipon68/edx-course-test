@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>detect mouse clicks on elements</title>
+</head>
+  <body>
+    <button id="button1" onclick="processClick(event)">Button1</button>
+    <div id="myDiv" onclick="processClick(event)">Click also on this div!</div>
+    <div id="clicks"></div>
+
+    <!-- <div id="someDiv" onclick="alert('clicked! div')"> content of the div </div> -->
+
+
+
+    <script>
+
+    window.onclick = processClick;
+
+    function processClick(evt){
+        var clicks = document.querySelector("#clicks");
+        var target = evt.target.id;
+
+        if(target === ""){
+            clicks.innerHTML += "You clicked on the window, not on a particular element!<br>";
+        }else{
+            clicks.innerHTML += "Element clicked id: " + target + "<br>";
+        }
+    }
+
+    document.addEventListener('click', function(e) {
+    console.log(
+        'page: ' + e.pageX + ',' + e.pageY,
+        'client: ' + e.clientX + ',' + e.clientY,
+        'screen: ' + e.screenX + ',' + e.screenY)
+    }, false);
+
+    </script>
+
+  </body>
+</html>

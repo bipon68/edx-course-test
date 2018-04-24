@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>querySelector and querySelector example 1</title>
+</head>
+<body>
+  <button onclick="addBorderToFirstImage();">
+    Add a border to the first image
+  </button>
+  <br>
+  <button onclick="resizeAllImages();">
+    Resize all images
+  </button>
+  <br>
+  <p>Click one of the buttons above!</p>
+<img src="https://mainline.i3s.unice.fr/mooc/Ntvj5rq.png" 
+     id="img1"
+     width=200 alt="image #1">
+<img src="https://mainline.i3s.unice.fr/mooc/yiU59oi.gif" 
+     width=200 alt="image #2">
+<img src="https://mainline.i3s.unice.fr/mooc/6FstYbc.jpg" 
+     width=200 alt="image #3">
+<img src="https://mainline.i3s.unice.fr/mooc/L97CyS4.png" 
+     width=200 alt="image #4">
+
+     <br/>
+
+
+     <button onclick="firstLiClassRedInUl();">Select first li of class red and color it in red</button>
+        <br>
+        <button onclick="allLisInUlOfClassNav();">Underline All li in a ul of class nav</button>
+        
+        <ul class="nav">
+            <li>Home</li>
+            <li class="red">Products</li>
+            <li>About</li>
+        </ul>
+        Another list:
+        <ul>
+            <li>Apple</li>
+            <li class="red">Cherries</li>
+            <li>Oranges</li>
+        </ul>
+
+        <br/>
+
+        <button onclick="changeBackGroundOfPs('firstDiv');">Change backgrounds of p under a given element known by id</button>
+        <br>
+        <div id="firstDiv">
+        <p>First paragraph.</p>
+        <p>Second paragraph.</p>
+        </div>
+
+
+  <script>
+
+    window.onload = init;
+
+    function init(){
+        console.log('Window load ready');
+
+        var listImages = document.querySelectorAll('img');
+            listImages.forEach(function(img){
+                img.style.boxShadow = "5px 5px 5px 5px gray";
+                img.style.margin = "10px";
+            });   
+    }
+
+    function addBorderToFirstImage(){
+        var img1 = document.querySelector('#img1');
+        img1.style.border = "5px solid red";
+    }
+
+    function resizeAllImages(){
+        var listImages = document.querySelectorAll('img');
+        listImages.forEach(function(img){
+            img.width = 100;
+        });
+    }
+
+
+
+    function firstLiClassRedInUl(){
+        var elm = document.querySelector('ul li.red');
+        elm.style.color = 'red';
+    }
+
+    function allLisInUlOfClassNav(list){
+        var list = document.querySelectorAll('ul.nav > li');
+        list.forEach(function(elm){
+            elm.style.textDecoration = 'underline';
+        });
+    }
+
+    function changeBackGroundOfPs(id) {
+        var paragraphs = document.querySelectorAll("#" + id + " p");
+
+        // Another way to iterate on all elements in a collection
+        for (var i = 0; i < paragraphs.length; i++ ) {
+            paragraphs[i].style.backgroundColor = "lightGreen";
+        }
+    }
+
+
+
+    </script>
+
+</body>
+</html>

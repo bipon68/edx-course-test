@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>JavaScript and HTML</title>
+  <meta charset="utf-8"/>
+  <script>
+
+// while statement 
+  var i = 1;
+  var j = 1;
+  while(i < 4){
+    j += 1;
+    i += 1;
+  }
+  console.log('value of i= ' + i + ' and j=' + j);
+
+// do while statement
+  var i = 0;
+  do{
+    console.log('i = ' + i);
+    i++;
+  }while(i < 20);
+console.log('Value of i after the do-while statement: ' + i);
+
+// for loop
+var i = 0;
+for(i; i < 10; i++){
+    console.log('value of i = ' + i);
+}
+
+// object + loop
+var mike = {
+    firstName: 'Mike',
+    lastName: 'Hussy',
+    age: 30
+}
+for(var property in mike){
+    //console.log(property);
+    console.log(mike[property]);
+}
+
+for(var i = 1, k = 0; i < 5; i++) {
+    if (i === 3) {
+        continue;
+    }
+ 
+    k += 2*i;
+    console.log('k += ' + (2*i));
+}
+console.log('Final k value:' + k);
+
+
+var tab = ['michel', 'john', 'donald', 'paul']; // johh at index = 1
+ 
+function isNameInTheArray(name, theArray) {
+    console.log("Number of elements in the array : " + theArray.length);
+    for(var i=0; i < theArray.length; i++) {
+        console.log('comparing with element in the array at pos ' + i);
+ 
+        if(theArray[i] === name) {
+           console.log('the name ' + name +
+                       ' is in the array at pos: ' + i);
+           break;
+        } else {
+           console.log(name + ' is not at pos ' + i);
+        }
+    }
+}
+ 
+// Execute the function
+isNameInTheArray('john', tab);
+
+
+
+  </script>
+</head>
+  <body>
+    <h1 id="mainTitle">Conditional Statement </h1> 
+ 
+    <p>This is an example of interactivity between JavaScript and the HTML content of a document.</p>
+    <button onclick="changeTheTitle();">Click me</button>
+  </body>
+</html>

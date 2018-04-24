@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Example1 of the 'load' event</title>
+
+  <style>
+    #pageSize, #screenSize {
+        border:1px solid red;
+        padding: 2px;
+        color:red;
+    }
+
+</style>
+</head>
+<body>
+  <p>This page uses <code>&lt;body onload='init();'&gt;</code> in the JS code  to execute the init function ONLY WHEN THE PAGE HAS BEEN LOADED!</p>
+  
+  <p>This is important as very often we cannot do important things before the DOM is ready (all HTML elements have been created and can be manipulated from JavaScript).</p>
+  
+  <p>PAGE STATUS: <span id="pageStatus">NOT LOADED YET</span></p>
+
+
+  <p>Curent page size: <span id="pageSize"></span></p>
+  <p>Screen size: <span id="screenSize"></span></p>
+
+
+<script>
+
+    window.onload = resize;
+    window.onresize = resize;
+
+    function resize(evt) {
+    console.log("resize");
+    var pageSizeSpan = document.querySelector('#pageSize');
+    pageSizeSpan.innerHTML = "Width: " + window.innerWidth + " Height: " + window.innerHeight;
+    
+    // screen size
+    var screenSizeSpan = document.querySelector('#screenSize');
+    screenSizeSpan.innerHTML = "Width: " + screen.width + " Height: " + screen.height;
+    
+    }
+
+    // way 1
+    // function init(){
+    //     var status = document.querySelector('#pageStatus');
+    //     status.innerHTML = 'Loaded';
+    //     // start working
+    // }
+
+    // way 2
+    window.onload = init;
+    function init(){
+        var status = document.querySelector('#pageStatus');
+        status.innerHTML = 'Loaded';
+        // start working
+    }
+
+</script>
+
+</body>
+</html>

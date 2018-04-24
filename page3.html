@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Data types</title>
+  <meta charset="utf-8"/>
+</head>
+
+<body>
+  <p id="p1"></p>
+  <p id="p2"></p>
+
+  <script>
+    var str1 = "This is \"simple\" string";
+    var str2 = "This is \"simple\" string two";
+
+    document.getElementById("p1").innerHTML = str1;
+    document.getElementById("p2").innerHTML = str2;
+
+    // new string 
+    var st1 = new String();
+    st1 = 'Hello world';
+
+    var st2 = new String('AlemHealth');
+
+    // number object
+    var num1 = new Number(100);
+    var num2 = new Number(100);
+
+    var num3 = 100;
+
+    num1 = num2;
+
+    // boolean
+
+    if(true){
+      //alert("this code is executed");
+    }
+    if(false){
+      //alert("this code is not executed");
+    }
+
+
+    // object 
+    // var <object-name> = { key1: value1, key2: value2,... keyN: valueN};
+
+      var emptyObject = {}; // object with no properties or methods
+
+      var person = {firsName: "AlemHealth"} // object with single property
+
+      // object with single method
+      var message = {
+        showMessage:function(val){
+          alert(val);
+        }
+      };
+
+      // object with properties & method
+      var person = {
+        firstName: "Alem",
+        lastName: "Health",
+        age: 3,
+        getFullName: function(){
+          return this.firstName + ' ' + this.lastName;
+        }
+      };
+
+      // Object Constructor:
+
+      var alem = new Object();
+
+      alem.firstName = "Alem";
+      alem["lastName"] = "Health2";
+      alem.age = 3;
+      alem.getFullName = function(){
+        return this.firstName + ' ' + ths.lastName;
+      }
+      //Access Object keys
+      // for(var key in alem){
+      //   alert(key);
+      // };
+
+      // null and undefined
+      var myVar = null;
+
+      // if (myVar){
+      //   alert("My myVar is Null");
+      // }else{
+      //   alert("My myVar is not Null");
+      // }
+
+      function Sum(val1, val2)
+      {
+          var result = val1 + val2;
+      }
+
+      var result = Sum(5, 5);
+      //alert(result);// undefined 
+
+
+
+
+  </script>
+
+</body>
+
+</html>
